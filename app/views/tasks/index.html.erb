@@ -1,0 +1,8 @@
+<div>
+  <ul>
+    <% @tasks.each do |task| %>
+      <li><%= link_to task.title, task_path(task[:id]) %></li>
+    <% end %>
+  </ul>
+  <%= link_to 'Create new task', new_task_path %>
+</div>
