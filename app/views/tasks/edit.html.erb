@@ -1,3 +1,9 @@
-<%= render 'form' %>
+<h1>Edit task</h1>
 
-<%= link_to 'Back to list', tasks_path %>
+<%= render 'form', task: @task %>
+
+<hr>
+
+<%= link_to tasks_path do %>
+  <i class='fa-solid fa-arrow-rotate-left'></i> Back to list
+<% end %>

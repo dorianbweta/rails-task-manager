@@ -2,7 +2,6 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
-    # I create an instance variable that I can re-use in my views!
     @tasks = Task.all
   end
 
@@ -16,7 +15,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.save
     # No need for app/views/tasks/create.html.erb
-    redirect_to task_path(@task[:id])
+    redirect_to tasks_path
   end
 
   def edit; end
@@ -24,7 +23,7 @@ class TasksController < ApplicationController
   def update
     @task.update(task_params)
     # No need for app/views/tasks/update.html.erb
-    redirect_to task_path(@task[:id])
+    redirect_to task_path(@task)
   end
 
   def destroy
